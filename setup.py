@@ -1,0 +1,42 @@
+from setuptools import setup, find_namespace_packages
+
+
+setup(name="equiv_primitive",
+      version="0.1",
+      description="",
+      author="",
+      author_email="",
+      license="MIT",
+      packages=find_namespace_packages(include=["equiv_primitive*"]),
+      install_requires=[
+          "click",
+          "matplotlib",
+          "scipy",
+          "tqdm",
+          "opencv-python==4.9.0.80",
+          "opencv-python-headless==4.9.0.80",
+          "opencv-contrib-python==4.7.0.72",
+          "hydra-core",
+          "wandb",
+          "chardet",
+          "trimesh[all]",
+          "natsort",
+          "ffmpeg",
+          "imageio[ffmpeg]",
+          "ipykernel",
+          "robosuite",
+          "gtimer",
+          "scikit-video",
+          "einops",
+          "diffusers",
+          "gym",
+          "pybullet",
+          "protobuf==3.20.0",
+          "modern_robotics",
+          "open3d",
+          "h5py",
+          "easydict",
+          "dill",
+          "transformers",   # BERT skill/task language embeddings
+          "zarr",           # normalizer statistics storage
+      ])
