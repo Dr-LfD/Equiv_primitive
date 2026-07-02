@@ -1,4 +1,4 @@
-# Per-Skill SIM(3)-Equivariant Diffusion Policy
+# Per-Skill SIM(3)-Equivariant Diffusion Policy (Threading & Assembly)
 
 A SIM(3)-equivariant diffusion policy that predicts manipulation skills **per skill**
 (one conditional model shared across skills, conditioned on a skill/task language
