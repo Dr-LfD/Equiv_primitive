@@ -6,9 +6,7 @@ import numpy as np
 import json
 import networkx as nx
 
-from equiv_primitive.policies.utils.repo_paths import env_path
-
-EQUIV_PRIMITIVE_PATH = pathlib.Path(env_path("PRIMITIVE_LEARNING_ROOT"))
+EQUIV_PRIMITIVE_PATH = pathlib.Path(__file__).parent.parent.parent.parent.absolute()
 
 def to_torch(batch, device):    return {k: v.to(device) for k, v in batch.items()}
 
@@ -183,9 +181,6 @@ def get_dataset(cfg, mode="train"):
     if "per_skill" in dataset_type:
         from equiv_primitive.policies.datasets.per_skill_dataset import PerSkillDataset
         return PerSkillDataset(cfg.data.dataset, mode)
-    if "real_aloha" in dataset_type:
-        from equiv_primitive.policies.datasets.real_aloha_dataset import RealAlohaDataset
-        return RealAlohaDataset(cfg.data.dataset, mode)
     else:
         raise ValueError(f"Dataset type [{dataset_type}] not supported.")
 
@@ -194,9 +189,6 @@ def get_agent(agent_name):
     if agent_name == "per_skill":
         from equiv_primitive.policies.agents.per_skill_agent import EquiSkillAgent
         return EquiSkillAgent
-    if agent_name == "sdp":
-        from equiv_primitive.policies.agents.sdp_agent import SDPAgent
-        return SDPAgent
     else:
         raise ValueError(f"Agent with name [{agent_name}] not found.")
 
